@@ -64,12 +64,37 @@ header nav ul li a {
 .projeto {
     background-color: rgb(2, 2, 41);
     border-radius: 10px;
-    padding: 10px;
     margin: 20px;
-    max-width: 400px;
+    width: 350px;
+    height: 240px;
     display: inline-block;
+    vertical-align: middle;
 }
 
 .projeto img {
     width: 300px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.descricao-projeto {
+    margin: 10px;
+    vertical-align: middle;
+}
+
+.descricao-projeto h3 {
+    width: 220px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.descricao-projeto button {
+    background-color: rgb(73, 73, 124);
+    color: white;
+    border-radius: 15px;
+    border: none;
+    width: 90px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
 }
