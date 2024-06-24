@@ -23,7 +23,7 @@ header nav ul {
 
 header nav ul li {
     display: inline-block;
-    margin: 20px;
+    margin: 20px 20px 0 20px;
     list-style-type: none;
 }
 
@@ -52,6 +52,7 @@ header nav ul li a {
     vertical-align: middle;
     margin: 20px;
     font-size: 1.2em;
+    line-height: 1.5em;
     text-align: justify;
 }
 
@@ -91,10 +92,34 @@ header nav ul li a {
 .descricao-projeto button {
     background-color: rgb(73, 73, 124);
     color: white;
-    border-radius: 15px;
+    font-size: 2em;
+    text-align: center;
+    border-radius: 50%;
     border: none;
-    width: 90px;
-    height: 30px;
+    margin-left: 5px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     vertical-align: middle;
+}
+
+.descricao-projeto button:hover, .botao-github:hover {
+    cursor: pointer;
+}
+
+.descricao-detalhada {
+    display: none;
+    margin: 50px;
+    line-height: 1.6em;
+}
+
+.botao-github {
+    background-color: rgb(73, 73, 124);
+    height: 40px;
+    width: 250px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    margin-top: 25px;
 }
