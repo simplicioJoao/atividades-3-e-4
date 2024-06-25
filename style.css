@@ -113,7 +113,7 @@ header nav ul li a {
     line-height: 1.6em;
 }
 
-.botao-github {
+.botao-github, form .enviar {
     background-color: rgb(73, 73, 124);
     height: 40px;
     width: 250px;
@@ -122,4 +122,46 @@ header nav ul li a {
     color: white;
     font-weight: bold;
     margin-top: 25px;
+}
+
+footer {
+    background-image: url(images/imagem-rodape.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 450px;
+}
+
+form {
+    background-color: rgb(2, 2, 41);
+    width: 400px;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+form h2 {
+    margin: 25px 0 0 0;
+}
+
+form label {
+    margin-top: 20px;
+}
+
+form label, form input, form textarea{
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    display: inline-block;
+}
+
+form textarea {
+    height: 70px;
+}
+
+form .enviar {
+    width: 300px;
 }
