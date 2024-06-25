@@ -12,16 +12,13 @@
 <body>
     <header>
         <h1>João Paulo Simplicio</h1>
-        <nav>
-            <ul>
-                <li><a href="#sobre-mim">Sobre Mim</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+        <div class="redes">
+            <a href="https://linkedin.com/in/joão-paulo-simplicio-612bb025a" target="_blank">Linkedin</a>
+            <a href="https://github.com/simplicioJoao" target="_blank">Github</a>
+        </div>
     </header>
     <main>
-        <section class="apresentacao" id="sobre-mim">
+        <section class="apresentacao">
             <img class="foto-perfil" src="images/foto-perfil.jpg" alt="Foto do João">
             <div class="descricao">
                 <p>Estudante de Engenharia de Software, possuo conhecimentos em Lógica de Programação, Python, HTML, CSS e
@@ -31,7 +28,7 @@
                 </p>
             </div>
         </section>
-        <section class="projetos" id="projetos">
+        <section class="projetos">
             <h2>Projetos</h2>
             <article class="projeto" id="projeto1">
                 <a href="https://simpliciojoao.github.io/frontend-mentor-social-links-profile/" target="_blank"><img src="images/pagina-links-sociais.png" alt="Página simples de links para redes sociais"></a>
@@ -57,15 +54,15 @@
             </article>
         </section>
     </main>
-    <footer id="contato">
-        <form>
+    <footer>
+        <form id="formulario">
             <h2>Formulário de contato</h2>
             <label>Nome</label>
-            <input type="text" name="nome" />
+            <input type="text" name="nome" required/>
             <label>Email</label>
-            <input type="email" name="email" />
+            <input type="email" name="email" required/>
             <label>Mensagem</label>
-            <textarea name="mensagem" placeholder="Escreva aqui a sua mensagem..."></textarea>
+            <textarea name="mensagem" placeholder="Escreva aqui a sua mensagem..." required></textarea>
             <input class="enviar" type="submit" value="Enviar">
         </form>
     </footer>

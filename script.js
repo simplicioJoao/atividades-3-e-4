@@ -16,13 +16,19 @@ function alteraTamanho(id) {
     }
 }
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('formulario');
 
-        const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({
-            behavior: 'smooth'
-        });
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const nome = form.nome.value.trim();
+        const email = form.email.value.trim();
+        const mensagem = form.mensagem.value.trim();
+
+        if (nome !== '' && email !== '' && mensagem !== '') {
+            alert('Mensagem enviada com sucesso!');
+            form.reset();
+        }
     });
 });
