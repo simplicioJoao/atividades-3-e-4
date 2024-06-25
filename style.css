@@ -112,14 +112,14 @@ header .redes a:hover {
 
 .descricao-detalhada {
     display: none;
-    margin: 50px;
+    margin: 20px;
     line-height: 1.6em;
 }
 
 .botao-github, form .enviar {
     background-color: rgb(73, 73, 124);
     height: 40px;
-    width: 250px;
+    max-width: 250px;
     border: none;
     border-radius: 10px;
     color: white;
