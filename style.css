@@ -17,19 +17,22 @@ h1 {
     text-align: center;
 }
 
-header nav ul {
+header .redes {
     text-align: center;
 } 
 
-header nav ul li {
+header .redes a {
     display: inline-block;
-    margin: 20px 20px 0 20px;
+    margin-top: 5px;
+    padding: 15px;
     list-style-type: none;
-}
-
-header nav ul li a {
     text-decoration: none;
     color: white;
+}
+
+header .redes a:hover {
+    background-color: rgb(73, 73, 124);
+    border-radius: 5px;
 }
 
 .apresentacao {
@@ -103,7 +106,7 @@ header nav ul li a {
     vertical-align: middle;
 }
 
-.descricao-projeto button:hover, .botao-github:hover {
+.descricao-projeto button:hover, .botao-github:hover, .enviar:hover {
     cursor: pointer;
 }
 
