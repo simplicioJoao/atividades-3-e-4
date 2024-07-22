@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" type="text/javascript" defer></script>
+    <script src="script.js" defer></script>
     <title>João Paulo Simplicio - Portfólio</title>
 </head>
 
@@ -52,11 +52,23 @@
                     <a href="https://github.com/simplicioJoao/frontend-mentor-profile-card-component" target="_blank"><button class="botao-github">Código no GitHub</button></a>
                 </div>
             </article>
+            <article class="projeto" id="projeto3">
+                <a href="https://simpliciojoao.github.io/frontend-mentor-recipe-page-main/" target="_blank"><img src="images/pagina-receita.png" alt="Página de receita"></a>
+                <div class="descricao-projeto">
+                    <h3>Página de receita</h3>
+                    <button onclick="alteraTamanho('projeto3')">+</button>
+                </div>
+                <div class="descricao-detalhada" id="descricao-projeto3">
+                    <p>O objetivo deste projeto do Frontend Mentor é reproduzir o layout de uma página de receita. É um projeto simples, mas que ajudou bastante na consolidação de conceitos básicos de HTML5 e CSS3.</p>
+                    <a href="https://github.com/simplicioJoao/frontend-mentor-recipe-page-main" target="_blank"><button class="botao-github">Código no GitHub</button></a>
+                </div>
+            </article>
         </section>
     </main>
     <footer>
         <form id="formulario">
             <h2>Formulário de contato</h2>
+            <input type="hidden" name="id" />
             <label>Nome</label>
             <input type="text" name="nome" required/>
             <label>Email</label>
@@ -65,6 +77,7 @@
             <textarea name="mensagem" placeholder="Escreva aqui a sua mensagem..." required></textarea>
             <input class="enviar" type="submit" value="Enviar">
         </form>
+        <a href="mensagens.html" target="_blank">Mensagens</a>
     </footer>
 </body>
 

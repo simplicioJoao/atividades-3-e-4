@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagens Recebidas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Mensagens Recebidas</h1>
+    </header>
+    <main>
+        <div class="tabs">
+            <button id="tab-nao-lidas" class="tab-button active" onclick="mostrarTab('nao-lidas')">Não lidas</button>
+            <button id="tab-lidas" class="tab-button" onclick="mostrarTab('lidas')">Lidas</button>
+        </div>
+        <section id="mensagens-nao-lidas" class="mensagens-tab active">
+            <h2>Mensagens Não Lidas</h2>
+            <ul id="lista-mensagens-nao-lidas"></ul>
+        </section>
+        <section id="mensagens-lidas" class="mensagens-tab">
+            <h2>Mensagens Lidas</h2>
+            <ul id="lista-mensagens-lidas"></ul>
+        </section>
+    </main>
+    <footer>
+        <form id="formulario">
+            <h2>Formulário de contato</h2>
+            <input type="hidden" name="id" />
+            <label>Nome</label>
+            <input type="text" name="nome" required/>
+            <label>Email</label>
+            <input type="email" name="email" required/>
+            <label>Mensagem</label>
+            <textarea name="mensagem" placeholder="Escreva aqui a sua mensagem..." required></textarea>
+            <input class="enviar" type="submit" value="Editar">
+        </form>
+    </footer>
+</body>
+
+</html>
