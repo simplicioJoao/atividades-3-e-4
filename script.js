@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('formulario');
     const listaMensagensNaoLidas = document.getElementById('lista-mensagens-nao-lidas');
     const listaMensagensLidas = document.getElementById('lista-mensagens-lidas');
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Função para deletar uma mensagem
-    window.deleteMensagem = function(id) {
+    window.deleteMensagem = function (id) {
         let mensagens = getMensagens();
         mensagens = mensagens.filter(mensagem => mensagem.id != id);
         localStorage.setItem('mensagens', JSON.stringify(mensagens));
@@ -67,10 +67,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 editarButton.textContent = 'Editar';
                 marcarLidaButton.textContent = 'Marcar como lida';
 
-                marcarLidaButton.onclick = function() {
+                marcarLidaButton.onclick = function () {
                     marcarComoLida(mensagem.id);
                 };
-                editarButton.onclick = function() {
+                editarButton.onclick = function () {
+                    //abrirModal();
                     editMensagem(mensagem.id);
                 }
                 li.appendChild(editarButton);
@@ -82,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Função para alternar entre as abas
-    window.mostrarTab = function(tab) {
+    window.mostrarTab = function (tab) {
         if (tab === 'nao-lidas') {
             document.getElementById('tab-nao-lidas').classList.add('active');
             document.getElementById('tab-lidas').classList.remove('active');
@@ -97,22 +98,39 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Função para editar uma mensagem
-    window.editMensagem = function(id) {
+    window.editMensagem = function (id) {
         const mensagens = getMensagens();
         const mensagem = mensagens.find(mensagem => mensagem.id == id);
         if (mensagem) {
-            form.nome.value = mensagem.nome;
-            form.email.value = mensagem.email;
-            form.mensagem.value = mensagem.mensagem;
-            form.id.value = mensagem.id;
+            // Preencher campos do formulário no modal
+            const modalForm = document.getElementById('formulario');
+            modalForm.nome.value = mensagem.nome;
+            modalForm.email.value = mensagem.email;
+            modalForm.mensagem.value = mensagem.mensagem;
+            modalForm.id.value = mensagem.id;
+
+            // Abrir o modal
+            abrirModal();
         }
     }
 
+    // Função para fechar o modal
+    window.fecharModal = function () {
+        const modal = document.getElementById('modal-editar');
+        modal.style.display = 'none';
+    }
+
+    // Função para abrir o modal
+    function abrirModal() {
+        const modal = document.getElementById('modal-editar');
+        modal.style.display = 'block';
+    }
+
     // Evento de submissão do formulário
-    form.addEventListener('submit', function(event) {
+    form.addEventListener('submit', function (event) {
         event.preventDefault(); // Impede o envio tradicional do formulário
 
-        const formData = new FormData(form);
+        const formData = new FormData(this);
         const data = {};
         formData.forEach((value, key) => {
             data[key] = value;
@@ -122,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Se houver um ID, é uma edição
             updateMensagem(data);
             alert("Mensagem editada com sucesso!");
+            fecharModal();
             loadMensagens();   // Recarrega a página depois de editar uma mensagem
         } else {
             // Senão, é uma nova mensagem

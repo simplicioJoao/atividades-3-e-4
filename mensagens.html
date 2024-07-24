@@ -27,19 +27,22 @@
             <ul id="lista-mensagens-lidas"></ul>
         </section>
     </main>
-    <footer>
-        <form id="formulario">
-            <h2>Formulário de contato</h2>
+
+    <!-- Modal para edição de mensagem -->
+    <div id="modal-editar" class="modal">
+        <form id="formulario" class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h2>Editar Mensagem</h2>
             <input type="hidden" name="id" />
             <label>Nome</label>
-            <input type="text" name="nome" required/>
+            <input type="text" name="nome" required />
             <label>Email</label>
-            <input type="email" name="email" required/>
+            <input type="email" name="email" required />
             <label>Mensagem</label>
             <textarea name="mensagem" placeholder="Escreva aqui a sua mensagem..." required></textarea>
             <input class="enviar" type="submit" value="Editar">
         </form>
-    </footer>
+    </div>
 </body>
 
 </html>
