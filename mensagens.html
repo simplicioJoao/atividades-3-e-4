@@ -5,30 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensagens Recebidas</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mensagens.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
     <header>
-        <h1>Mensagens Recebidas</h1>
-    </header>
-    <main>
+        <h1>Página de Mensagens</h1>
         <div class="tabs">
             <button id="tab-nao-lidas" class="tab-button active" onclick="mostrarTab('nao-lidas')">Não lidas</button>
             <button id="tab-lidas" class="tab-button" onclick="mostrarTab('lidas')">Lidas</button>
         </div>
+    </header>
+    <main>
         <section id="mensagens-nao-lidas" class="mensagens-tab active">
-            <h2>Mensagens Não Lidas</h2>
             <ul id="lista-mensagens-nao-lidas"></ul>
         </section>
         <section id="mensagens-lidas" class="mensagens-tab">
-            <h2>Mensagens Lidas</h2>
             <ul id="lista-mensagens-lidas"></ul>
         </section>
     </main>
 
-    <!-- Modal para edição de mensagem -->
     <div id="modal-editar" class="modal">
         <form id="formulario" class="modal-content">
             <span class="close" onclick="fecharModal()">&times;</span>

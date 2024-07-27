@@ -7,10 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function createMensagem(data) {
         const mensagens = getMensagens();
         data.id = new Date().getTime();
-        data.lida = false; // Define a mensagem como não lida por padrão
+        data.lida = false;
         mensagens.push(data);
         localStorage.setItem('mensagens', JSON.stringify(mensagens));
-        loadMensagens(); // Recarrega as mensagens após adicionar uma nova
     }
 
     // Função para ler todas as mensagens
@@ -36,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (index !== -1) {
             mensagens[index].lida = true;
             localStorage.setItem('mensagens', JSON.stringify(mensagens));
-            loadMensagens(); // Recarrega as mensagens após marcar como lida
+            loadMensagens();
         }
     }
 
@@ -57,28 +56,44 @@ document.addEventListener('DOMContentLoaded', function () {
         mensagens.forEach(mensagem => {
             const li = document.createElement('li');
             li.innerHTML = `
-                <strong>${mensagem.nome}</strong> (${mensagem.email}): ${mensagem.mensagem}
-                <button onclick="deleteMensagem(${mensagem.id})">Deletar</button>
+                <div class="dados">
+                    <p>${mensagem.nome}</p>
+                    <p>${mensagem.email}</p><br>
+                    <p>${mensagem.mensagem}</p>
+                </div>
             `;
+
+            const deletarButton = document.createElement('button');
+            deletarButton.textContent = 'Excluir';
+            deletarButton.onclick = function () {
+                deleteMensagem(mensagem.id);
+            }
+
             if (!mensagem.lida) {
-                listaMensagensNaoLidas.appendChild(li);
+                listaMensagensNaoLidas.appendChild(li);     
+                const buttonsContainer = document.createElement('div');
+                buttonsContainer.className = 'botoes-mensagem';
                 const editarButton = document.createElement('button');
                 const marcarLidaButton = document.createElement('button');
+                
                 editarButton.textContent = 'Editar';
-                marcarLidaButton.textContent = 'Marcar como lida';
-
+                marcarLidaButton.textContent = 'Marcar como lida';               
                 marcarLidaButton.onclick = function () {
                     marcarComoLida(mensagem.id);
                 };
                 editarButton.onclick = function () {
-                    //abrirModal();
                     editMensagem(mensagem.id);
-                }
-                li.appendChild(editarButton);
-                li.appendChild(marcarLidaButton);
+                };
+            
+                li.appendChild(buttonsContainer);
+                buttonsContainer.appendChild(editarButton);
+                buttonsContainer.appendChild(marcarLidaButton);
+                buttonsContainer.appendChild(deletarButton);
             } else {
                 listaMensagensLidas.appendChild(li);
+                li.appendChild(deletarButton);
             }
+            
         });
     }
 
@@ -102,7 +117,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const mensagens = getMensagens();
         const mensagem = mensagens.find(mensagem => mensagem.id == id);
         if (mensagem) {
-            // Preencher campos do formulário no modal
             const modalForm = document.getElementById('formulario');
             modalForm.nome.value = mensagem.nome;
             modalForm.email.value = mensagem.email;
@@ -114,13 +128,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Função para fechar o modal
     window.fecharModal = function () {
         const modal = document.getElementById('modal-editar');
         modal.style.display = 'none';
     }
 
-    // Função para abrir o modal
     function abrirModal() {
         const modal = document.getElementById('modal-editar');
         modal.style.display = 'block';
@@ -128,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Evento de submissão do formulário
     form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Impede o envio tradicional do formulário
+        event.preventDefault();
 
         const formData = new FormData(this);
         const data = {};
@@ -140,14 +152,15 @@ document.addEventListener('DOMContentLoaded', function () {
             // Se houver um ID, é uma edição
             updateMensagem(data);
             alert("Mensagem editada com sucesso!");
+            loadMensagens();
             fecharModal();
-            loadMensagens();   // Recarrega a página depois de editar uma mensagem
         } else {
             // Senão, é uma nova mensagem
             createMensagem(data);
+            alert("Mensagem enviada com sucesso!");
         }
 
-        form.reset(); // Reseta o formulário após envio
+        form.reset();
     });
 
     // Carrega as mensagens ao iniciar a página

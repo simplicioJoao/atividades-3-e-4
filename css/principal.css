@@ -1,0 +1,140 @@
+header .redes {
+    text-align: center;
+}
+
+header .redes a {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+header .redes a:hover {
+    background-color: rgb(73, 73, 124);
+    border-radius: 5px;
+}
+
+.apresentacao {
+    text-align: center;
+    padding: 50px;
+}
+
+.foto-perfil {
+    max-width: 275px;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid white;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.descricao {
+    max-width: 600px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 20px;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    text-align: justify;
+}
+
+.projetos {
+    background-color: rgb(73, 73, 124);
+    padding: 20px;
+    text-align: center;
+}
+
+.projeto {
+    background-color: rgb(2, 2, 41);
+    border-radius: 10px;
+    margin: 20px;
+    max-width: 350px;
+    height: 240px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.projeto img {
+    width: 90%;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.descricao-projeto {
+    margin: 10px;
+    vertical-align: middle;
+}
+
+.descricao-projeto h3 {
+    max-width: 220px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.descricao-projeto button {
+    background-color: rgb(73, 73, 124);
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    border-radius: 50%;
+    border: none;
+    margin-left: 5px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.descricao-detalhada {
+    display: none;
+    margin: 20px;
+    line-height: 1.6em;
+}
+
+.botao-github,
+.botao-mensagens,
+form .enviar {
+    background-color: rgb(73, 73, 124);
+    height: 40px;
+    max-width: 350px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.botao-github,
+.botao-mensagens {
+    width: 200px;
+}
+
+.mensagens {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.mensagens button {
+    margin: 0;
+}
+
+#p-mensagens {
+    padding-top: 3px;
+}
+
+.footer-principal {
+    background-image: url(../images/imagem-rodape.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 450px;
+}
