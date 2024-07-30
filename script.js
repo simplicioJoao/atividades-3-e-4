@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const li = document.createElement('li');
             li.innerHTML = `
                 <div class="dados">
-                    <p>${mensagem.nome}</p>
+                    <strong>${mensagem.nome}</strong>
                     <p>${mensagem.email}</p><br>
                     <p>${mensagem.mensagem}</p>
                 </div>
@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const deletarButton = document.createElement('button');
             deletarButton.textContent = 'Excluir';
+            deletarButton.className = 'botao-excluir';
             deletarButton.onclick = function () {
                 deleteMensagem(mensagem.id);
             }
@@ -72,12 +73,16 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!mensagem.lida) {
                 listaMensagensNaoLidas.appendChild(li);     
                 const buttonsContainer = document.createElement('div');
-                buttonsContainer.className = 'botoes-mensagem';
                 const editarButton = document.createElement('button');
                 const marcarLidaButton = document.createElement('button');
-                
+
                 editarButton.textContent = 'Editar';
-                marcarLidaButton.textContent = 'Marcar como lida';               
+                marcarLidaButton.textContent = 'Marcar como lida';
+                
+                buttonsContainer.className = 'botoes-mensagem';
+                editarButton.className = 'botao-editar';
+                marcarLidaButton.className = 'botao-marcar-lida';
+
                 marcarLidaButton.onclick = function () {
                     marcarComoLida(mensagem.id);
                 };
@@ -149,7 +154,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         if (data.id) {
-            // Se houver um ID, é uma edição
             updateMensagem(data);
             alert("Mensagem editada com sucesso!");
             loadMensagens();
@@ -159,11 +163,8 @@ document.addEventListener('DOMContentLoaded', function () {
             createMensagem(data);
             alert("Mensagem enviada com sucesso!");
         }
-
         form.reset();
     });
-
-    // Carrega as mensagens ao iniciar a página
     loadMensagens();
 });
 

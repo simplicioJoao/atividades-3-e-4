@@ -1,10 +1,7 @@
 .mensagens-tab {
     display: none;
-    margin: 0 30px;
     padding: 10px;
     background-color: rgb(2, 2, 41);
-    border-radius: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.7);
 }
 
 .mensagens-tab.active {
@@ -41,6 +38,7 @@ li {
     margin: 15px;
     border-radius: 5px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
@@ -54,10 +52,21 @@ li {
     display: flex;
 }
 
+.botao-excluir {
+    background-color: rgb(204, 0, 0);
+}
+
+.botao-editar {
+    background-color: rgb(45, 45, 128);
+}
+
+.botao-marcar-lida {
+    background-color: rgb(34, 139, 34);
+}
+
 #lista-mensagens-lidas li button,
 #lista-mensagens-nao-lidas li button {
-    background-color: rgb(73, 73, 124);
-    height: 30px;
+    min-height: 30px;
     border: none;
     border-radius: 5px;
     color: white;
@@ -66,12 +75,7 @@ li {
     padding: 0 20px;
 }
 
-#lista-mensagens-lidas li button:hover,
-#lista-mensagens-nao-lidas li button:hover {
-    cursor: pointer;
-}
-
-/* Modal -----------------------------------------*/
+/* Modal */
 
 .modal {
     display: none;
@@ -90,16 +94,17 @@ li {
     background-color: rgb(2, 2, 41);
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid rgb(136, 136, 136);
     width: 80%;
     max-width: 600px;
 }
 
 .close {
     color: rgb(170, 170, 170);
-    float: right;
     font-size: 28px;
     font-weight: bold;
+    width: 100%;
+    text-align: right;
 }
 
 .close:hover,

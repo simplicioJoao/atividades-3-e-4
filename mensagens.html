@@ -19,23 +19,25 @@
         </div>
     </header>
     <main>
-        <section id="mensagens-nao-lidas" class="mensagens-tab active">
-            <ul id="lista-mensagens-nao-lidas"></ul>
-        </section>
-        <section id="mensagens-lidas" class="mensagens-tab">
-            <ul id="lista-mensagens-lidas"></ul>
-        </section>
+        <div>
+            <section id="mensagens-nao-lidas" class="mensagens-tab active">
+                <ul id="lista-mensagens-nao-lidas"></ul>
+            </section>
+            <section id="mensagens-lidas" class="mensagens-tab">
+                <ul id="lista-mensagens-lidas"></ul>
+            </section>
+        </div>
     </main>
 
     <div id="modal-editar" class="modal">
         <form id="formulario" class="modal-content">
             <span class="close" onclick="fecharModal()">&times;</span>
             <h2>Editar Mensagem</h2>
-            <input type="hidden" name="id" />
+            <input type="hidden" name="id" required/>
             <label>Nome</label>
-            <input type="text" name="nome" required />
+            <input type="text" name="nome" required/>
             <label>Email</label>
-            <input type="email" name="email" required />
+            <input type="email" name="email" required/>
             <label>Mensagem</label>
             <textarea name="mensagem" placeholder="Escreva aqui a sua mensagem..." required></textarea>
             <input class="enviar" type="submit" value="Editar">
