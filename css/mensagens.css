@@ -10,7 +10,7 @@
 
 .tabs {
     text-align: center;
-    margin: 20px;
+    margin: 20px 0;
 }
 
 .tab-button {
@@ -29,13 +29,17 @@
 
 ul {
     padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 li {
     background-color: rgba(255, 255, 255, 0.1);
     list-style-type: none;
+    width: 70%;
     padding: 20px 40px;
-    margin: 15px;
+    margin: 10px;
     border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
@@ -44,7 +48,7 @@ li {
 }
 
 .dados {
-    max-width: 400px;
+    width: 50%;
     padding: 20px 0;
 }
 
@@ -64,14 +68,13 @@ li {
     background-color: rgb(34, 139, 34);
 }
 
-#lista-mensagens-lidas li button,
-#lista-mensagens-nao-lidas li button {
+.botoes-mensagem button {
     min-height: 30px;
     border: none;
     border-radius: 5px;
     color: white;
     font-weight: bold;
-    margin-left: 10px;
+    margin-left: 8px;
     padding: 0 20px;
 }
 
@@ -114,13 +117,25 @@ li {
     cursor: pointer;
 }
 
-form .enviar {
-    background-color: rgb(73, 73, 124);
-    height: 40px;
-    max-width: 350px;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
-    margin-top: 25px;
+@media screen and (max-width: 1000px) {
+    li {
+        align-items: center;
+        justify-content: center;
+    } 
+    
+    .dados {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .botoes-mensagem {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .botoes-mensagem button {
+        margin: 8px 0 0 0;
+    }
 }

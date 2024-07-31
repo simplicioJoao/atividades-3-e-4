@@ -128,7 +128,6 @@ document.addEventListener('DOMContentLoaded', function () {
             modalForm.mensagem.value = mensagem.mensagem;
             modalForm.id.value = mensagem.id;
 
-            // Abrir o modal
             abrirModal();
         }
     }
@@ -159,7 +158,6 @@ document.addEventListener('DOMContentLoaded', function () {
             loadMensagens();
             fecharModal();
         } else {
-            // Senão, é uma nova mensagem
             createMensagem(data);
             alert("Mensagem enviada com sucesso!");
         }
@@ -175,10 +173,12 @@ function alteraTamanho(id) {
 
     if (descricaoDetalhada.style.display === "none" || !descricaoDetalhada.style.display) {
         tamanhoCaixa.style.height = 'auto';
-        descricaoDetalhada.style.display = "block";
+        descricaoDetalhada.style.display = "flex";
+        descricaoDetalhada.style.flexDirection = "column";
+        descricaoDetalhada.style.alignItems = "center";
         botao.textContent = "-";
     } else {
-        tamanhoCaixa.style.height = '240px';
+        tamanhoCaixa.style.height = '100%';
         descricaoDetalhada.style.display = "none";
         botao.textContent = "+";
     }

@@ -26,8 +26,7 @@ header .redes a:hover {
 }
 
 .foto-perfil {
-    max-width: 275px;
-    height: auto;
+    width: 275px;
     border-radius: 50%;
     border: 5px solid white;
 }
@@ -61,7 +60,7 @@ header .redes a:hover {
     border-radius: 10px;
     margin: 20px;
     max-width: 350px;
-    height: 240px;
+    height: 100%;
     text-align: center;
 }
 
@@ -74,7 +73,6 @@ header .redes a:hover {
 .descricao-projeto {
     margin: 10px;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 10px;
@@ -102,22 +100,28 @@ header .redes a:hover {
     line-height: 1.6em;
 }
 
-.botao-github,
-.botao-mensagens,
-form .enviar {
+.link-botao {
     background-color: rgb(73, 73, 124);
-    height: 40px;
-    max-width: 350px;
-    border: none;
+    padding: 10px;
+    width: 70%;
     border-radius: 10px;
-    color: white;
-    font-weight: bold;
     margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.mensagens .link-botao {
+    margin: 0;
+    width: 200px;
 }
 
 .botao-github,
 .botao-mensagens {
-    width: 200px;
+    background-color: rgb(73, 73, 124);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
 }
 
 .mensagens {
@@ -135,14 +139,52 @@ form .enviar {
     padding-top: 3px;
 }
 
-.mensagens button {
-    margin: 0;
-}
-
 .footer-principal {
     background-image: url(../images/imagem-rodape.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     height: 450px;
+}
+
+@media screen and (max-width: 806px) {
+    .mensagens {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    form {
+        position: static;
+    }
+
+    form label,
+    form input,
+    form textarea {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .foto-perfil {
+        max-width: 75%;
+    }
+
+    .descricao {
+        font-size: 1em;
+    }
+
+    form label,
+    form input,
+    form textarea {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .descricao-projeto {
+        flex-direction: column;
+    }
 }
