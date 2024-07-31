@@ -64,22 +64,23 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
 
             const deletarButton = document.createElement('button');
+            const buttonsContainer = document.createElement('div');
+
             deletarButton.textContent = 'Excluir';
             deletarButton.className = 'botao-excluir';
+            buttonsContainer.className = 'botoes-mensagem';
             deletarButton.onclick = function () {
                 deleteMensagem(mensagem.id);
             }
 
             if (!mensagem.lida) {
-                listaMensagensNaoLidas.appendChild(li);     
-                const buttonsContainer = document.createElement('div');
+                listaMensagensNaoLidas.appendChild(li);                    
                 const editarButton = document.createElement('button');
                 const marcarLidaButton = document.createElement('button');
 
                 editarButton.textContent = 'Editar';
                 marcarLidaButton.textContent = 'Marcar como lida';
                 
-                buttonsContainer.className = 'botoes-mensagem';
                 editarButton.className = 'botao-editar';
                 marcarLidaButton.className = 'botao-marcar-lida';
 
@@ -96,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 buttonsContainer.appendChild(deletarButton);
             } else {
                 listaMensagensLidas.appendChild(li);
+                li.appendChild(buttonsContainer);
                 li.appendChild(deletarButton);
             }
             
